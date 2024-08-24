@@ -1,10 +1,24 @@
 # Build an ML Pipeline for Short-Term Rental Prices in NYC
-You are working for a property management company renting rooms and properties for short periods of 
-time on various rental platforms. You need to estimate the typical price for a given property based 
-on the price of similar properties. Your company receives new data in bulk every week. The model needs 
-to be retrained with the same cadence, necessitating an end-to-end pipeline that can be reused.
+* Course: ML DevOps Engineer Nanodegree Udacity
+## Project description
+This project is working for a property management company renting rooms and properties for short periods of 
+time on various rental platforms. It can train a machine learning model to estimate the typical price for a given property based 
+on the price of similar properties. New data is received in bulk every week. An end-to-end pipeline is used to retrain the model with teh same cadence.
 
-In this project you will build such a pipeline.
+## Project Link 
+ <div>
+<a href="https://github.com/neulxlx/build-ml-pipeline-for-short-term-rental-prices">
+  <img src="https://img.shields.io/badge/Github-white?logoGithub&logoColor=black&style=for-the-badge" />  
+</a>
+</div>
+
+
+<div id="badges">
+  <a href="https://wandb.ai/neulx/nyc_airbnb">
+    <img src="https://img.shields.io/badge/Weights_&_Biases-FFCC33?style=for-the-badge&logo=WeightsAndBiases&logoColor=black" />  
+  <a/>
+ </div>
+ <br />
 
 ## Table of contents
 
@@ -221,7 +235,7 @@ notebook can be understood by other people like your colleagues
   ```bash
   > mlflow run . -P steps=download
   ```
-  
+
   You will see a message similar to:
 
   ```
@@ -238,7 +252,7 @@ notebook can be understood by other people like your colleagues
    Jupyter logo.
 3. Within the notebook, fetch the artifact we just created (``sample.csv``) from W&B and read 
    it with pandas:
-    
+   
     ```python
     import wandb
     import pandas as pd
@@ -265,7 +279,7 @@ notebook can be understood by other people like your colleagues
    maximum of $ 350 per night.
    
 5. Fix some of the little problems we have found in the data with the following code:
-    
+   
    ```python
    # Drop outliers
    min_price = 10
@@ -392,11 +406,11 @@ last one we produced in the previous step. Add a tag ``reference`` to it by clic
 in the Aliases section on the right:
 
 ![reference tag](images/wandb-tag-data-test.png "adding a reference tag")
- 
+
 Now we are ready to add some tests. In the starter kit you can find a ``data_tests`` step
 that you need to complete. Let's start by appending to 
 ``src/data_check/test_data.py`` the following test:
-  
+
 ```python
 def test_row_count(data):
     assert 15000 < data.shape[0] < 1000000
